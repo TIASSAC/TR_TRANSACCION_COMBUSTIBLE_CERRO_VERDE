@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 
         goToLogin();
     }
-
+//
     @Override
     public void goToMain(String User) {
 
