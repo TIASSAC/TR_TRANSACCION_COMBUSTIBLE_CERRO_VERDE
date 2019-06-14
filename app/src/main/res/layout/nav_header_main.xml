@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_header"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@color/assac_red_primary_dark_b"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_header_imageView"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/round_outline"
+                android:src="@drawable/miner" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_header_imageView_logoassac"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/round_outline"
+                android:src="@drawable/logoassac"
+                android:layout_gravity="right"
+                android:layout_margin="2dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/nav_header_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        android:text="Bienvenido: TIASSAC"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+</LinearLayout>

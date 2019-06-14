@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CreateTransactionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/line1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e1dcdc"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="Usuario:"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="TIASSAC"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:text="Ticket:"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/forma_circular"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/numTicket"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="100"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Hora Inicio: "
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="10:49:100"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="20dp"
+                            android:text="Hora Fin: "
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="10:49:100"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Estación: "
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="CERRO VERDE - ESTACION"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="finTurno"
+                        android:background="@color/assac_red_primary_light"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteScoop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/scoop"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="SCOOP"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteGuide"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/guide"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="GUIA R."
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteVol"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/beaker"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="VOL. SEGUN GUIA R."
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteDNI"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/dni"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="DNI CONDUCTOR"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/etePlaca"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/plate"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="PLACA"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteFechaActual"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/calendar"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="FECHA ACTUAL"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteHoraInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/clock"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="HORA INICIO"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteHoraFin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/clock"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="HORA FIN"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteContometroIni"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/counter"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="CONTOMETRO INICIO"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteContometroFin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/counter"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="CONTOMETRO FIN"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteVolpre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/difcontometer"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="DIF.CONTOMETRO"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_outline"
+                android:textAllCaps="true">
+
+                <EditText
+                    android:id="@+id/eteDifVol"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/difvolume"
+                    android:drawablePadding="10dp"
+                    android:ems="20"
+                    android:hint="DIF.VOLUMEN"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="11"
+                    android:textSize="30sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnGenerar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:text="Generar"
+            android:textColor="@color/white"
+            android:textSize="35dp" />
+    </LinearLayout>
+
+</RelativeLayout>

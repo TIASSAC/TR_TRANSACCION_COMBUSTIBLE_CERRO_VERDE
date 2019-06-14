@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_header"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="#df070b"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <group>
+        <item android:id="@+id/nav_item_one"
+            android:icon="@drawable/ic_home"
+            android:title="Crear Transacción" />
+        <item android:id="@+id/nav_item_two"
+            android:icon="@drawable/list"
+            android:title="Listar Transacciones"
+            android:titleCondensed="21sp"/>
+    </group>
+
+
+    <item android:title="Sesión">
+        <menu>
+            <item android:id="@+id/nav_item_six"
+                android:icon="@drawable/ic_bluetooth_power"
+                android:title="Cerrar Sesión" />
+        </menu>
+    </item>
+</menu>

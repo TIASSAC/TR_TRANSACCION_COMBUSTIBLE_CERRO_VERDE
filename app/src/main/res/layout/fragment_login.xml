@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="12dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="12dp"
+    android:orientation="vertical"
+    tools:context=".fragments.LoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l2"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gen_tran"
+            android:textSize="20sp"
+            android:drawableTop="@drawable/logoassac"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l3"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!-- User Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/eteUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="@string/user"
+                android:text="@string/TIASSAC"
+                android:ems="10"
+                android:textSize="25sp"
+                android:maxLength="20"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="10dp"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/etePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/lock"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:text="@string/clave"
+                android:textSize="25sp"
+                android:importantForAutofill="no" />
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@color/assac_red_primary"
+            android:textColor="@color/white"
+            style="@style/Widget.AppCompat.Button"
+            android:insetLeft="4dp"
+            android:insetRight="4dp"
+            android:text="@string/enter" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
