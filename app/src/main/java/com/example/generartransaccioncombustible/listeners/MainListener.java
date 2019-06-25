@@ -6,4 +6,7 @@ public interface MainListener {
 
     void goToCreateTransaction();
 
+    void goToInit();
+
+
 }

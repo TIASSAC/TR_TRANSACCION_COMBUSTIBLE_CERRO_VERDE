@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.generartransaccioncombustible.storage.PreferencesHelper;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -26,15 +28,15 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Intent intent;
                 intent = new Intent(SplashActivity.this, LoginActivity.class);
-//                boolean session= PreferencesHelper.isSignedIn(SplashActivity.this);
-////                if(session)
-////                {
-////                    Log.d(TAG,"En sesión");
-////                    intent=new Intent(SplashActivity.this, MainActivity.class);
-////                }else {
-////                    Log.d(TAG,"Fuera de sesión");
-////                    intent = new Intent(SplashActivity.this, LoginActivity.class);
-////                }
+                boolean session= PreferencesHelper.isSignedIn(SplashActivity.this);
+                if(session)
+                {
+                    Log.d(TAG,"En sesión");
+                    intent=new Intent(SplashActivity.this, MainActivity.class);
+                }else {
+                    Log.d(TAG,"Fuera de sesión");
+                    intent = new Intent(SplashActivity.this, LoginActivity.class);
+                }
                 startActivity(intent);
                 finish();
             }
