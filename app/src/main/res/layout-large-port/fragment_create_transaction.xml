@@ -292,7 +292,7 @@
                     android:drawableLeft="@drawable/calendar"
                     android:drawablePadding="10dp"
                     android:ems="20"
-                    android:hint="FECHA ACTUAL"
+                    android:hint="FECHA"
                     android:inputType="textEmailAddress"
                     android:maxLength="11"
                     android:textSize="30sp" />
