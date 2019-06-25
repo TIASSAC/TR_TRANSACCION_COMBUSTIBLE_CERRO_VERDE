@@ -1,47 +1,46 @@
 package com.example.generartransaccioncombustible.fragments;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.example.generartransaccioncombustible.MainActivity;
 import com.example.generartransaccioncombustible.R;
+import com.example.generartransaccioncombustible.listeners.LoginListener;
+import com.example.generartransaccioncombustible.listeners.MainListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link InitFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link InitFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class InitFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private Button btnCrearTransa;
+    private ImageView btnCerrarSesion;
+    private MainListener mMainListener;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+    private MainListener mListener;
 
     public InitFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InitFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static InitFragment newInstance(String param1, String param2) {
         InitFragment fragment = new InitFragment();
@@ -68,22 +67,17 @@ public class InitFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_init, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        initB();
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mListener = (MainActivity) activity;
     }
 
     @Override
@@ -92,18 +86,57 @@ public class InitFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+
+
+    private void initB(){
+        btnCrearTransa = (Button)getView().findViewById(R.id.btnCrearTransa);
+        btnCerrarSesion = (ImageView)getView().findViewById(R.id.btnCerrarSesion);
+
+
+        /**boton crear transaccion*/
+        crearTransa creartransa = new crearTransa();
+        btnCrearTransa.setOnClickListener(creartransa);
+
+        /**boton cerrar sesion*/
+        cerrarSesion cerrarsesion = new cerrarSesion();
+        btnCerrarSesion.setOnClickListener(cerrarsesion);
+    }
+
+    private class crearTransa implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            mListener.goToCreateTransaction();
+        }
+    }
+
+    private class cerrarSesion implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setCancelable(false);
+            builder.setMessage("¿Desea Cerrar Sesión?");
+            builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    mListener.logOut();
+                }
+            });
+            builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
     }
 }
