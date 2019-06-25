@@ -16,4 +16,29 @@
 
     <string name="navigation_drawer_open">Abrir</string>
     <string name="navigation_drawer_close">Cerrar</string>
+
+    <!--String Transaccion-->
+    <string name="userTran">Usuario: </string>
+    <string name="ticket">Ticket:</string>
+    <string name="station">Estación: </string>
+    <string name="operation">Cerro Verde</string>
+    <string name="scoop">SCOOP</string>
+    <string name="referralGuide">GUIA REMISION</string>
+    <string name="volReferralGuide">VOL. GUIA REMISION</string>
+    <string name="dniDriver">DNI CONDUCTOR</string>
+    <string name="plate">PLACA</string>
+    <string name="contometerInit">CONTOMETRO INICIO</string>
+    <string name="contometerEnd">CONTOMETRO FIN</string>
+    <string name="volpre">VOLPRE</string>
+    <string name="difVolume">DIF. VOLUMEN</string>
+    <string name="generate">GENERAR</string>
+
+    <!--String Menu Action Bar-->
+
+    <string name="menuPrincipal">Menú Principal</string>
+    <string name="report">Reporte</string>
+    <string name="transaction">Transacciones</string>
+    <string name="turn">Turno</string>
+    <string name="createTransaction">Crear Transacción</string>
+
 </resources>
