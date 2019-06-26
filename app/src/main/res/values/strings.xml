@@ -40,5 +40,20 @@
     <string name="transaction">Transacciones</string>
     <string name="turn">Turno</string>
     <string name="createTransaction">Crear Transacción</string>
+    <string name="configuration">Configuración</string>
+
+    <!--String Cabecera de Datos-->
+
+    <string name="date">Fecha - Hora Actual</string>
+    <string name="turn2">Turno:</string>
+    <string name="turn3">Ultimo Turno Registrado:</string>
+    <string name="initTurn">Inicio Turno</string>
+    <string name="endTurn">Fin Turno</string>
+    <string name="signOff">Cerrar Sesión</string>
+
+    <!--String Vista Configuracion-->
+
+    <string name="save">Guardar</string>
+
 
 </resources>

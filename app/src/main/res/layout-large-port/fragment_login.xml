@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="10dp"
-                android:drawableStart="@drawable/locked"
+                android:drawableStart="@drawable/lockon"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="@string/password"
