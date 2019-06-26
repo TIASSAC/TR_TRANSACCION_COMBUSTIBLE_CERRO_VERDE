@@ -1,26 +1,18 @@
 package com.example.generartransaccioncombustible;
 
 import android.app.AlertDialog;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.generartransaccioncombustible.fragments.ConfigurationFragment;
 import com.example.generartransaccioncombustible.fragments.CreateTransactionFragment;
 import com.example.generartransaccioncombustible.fragments.InitFragment;
 import com.example.generartransaccioncombustible.fragments.NavigationFragment;
@@ -32,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements MainListener {
     private static CreateTransactionFragment createTransactionFragment = CreateTransactionFragment.newInstance(null,null);
 
     private static InitFragment initFragment = InitFragment.newInstance(null,null);
+
+    private static ConfigurationFragment configurationFragment = ConfigurationFragment.newInstance(null,null);
 
     public int flag = 0;
 
@@ -48,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainListener {
             @Override
             public void onClick(View v) {
                 Log.i("flag","flag"+flag);
-                if(flag == 3){
+                if(flag == 3 || flag ==4){
                     goToInit();
                 }else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -98,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements MainListener {
         alert.show();
     }
 
+
     @Override
     public void logOut(){
         Toast.makeText(this,"Sesión terminada. ", Toast.LENGTH_LONG).show();
@@ -109,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements MainListener {
     @Override
     public void goToCreateTransaction() {
         NavigationFragment.addFragment(null, createTransactionFragment, "CreateTransactionFragment", this,
-                R.id.toolbar_main, false, CustomAnimation.LEFT_RIGHT);
+                R.id.toolbar_main, false, CustomAnimation.IN_OUT);
         flag = 3;
         setTitle(R.string.createTransaction);
     }
@@ -118,9 +113,17 @@ public class MainActivity extends AppCompatActivity implements MainListener {
     public void goToInit() {
 
         NavigationFragment.addFragment(null, initFragment, "InitFragment", this,
-                R.id.toolbar_main, false, CustomAnimation.LEFT_RIGHT);
+                R.id.toolbar_main, false, CustomAnimation.IN_OUT);
         flag=2;
         setTitle(R.string.menuPrincipal);
+    }
+
+    @Override
+    public void goToConfiguration(){
+        NavigationFragment.addFragment(null, configurationFragment, "configurationFragment", this,
+                R.id.toolbar_main, false, CustomAnimation.IN_OUT);
+        flag=4;
+        setTitle(R.string.configuration);
     }
 
 

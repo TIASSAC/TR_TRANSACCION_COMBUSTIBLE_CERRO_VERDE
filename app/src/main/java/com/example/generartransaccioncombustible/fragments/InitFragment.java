@@ -27,8 +27,7 @@ public class InitFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private Button btnCrearTransa;
-    private ImageView btnCerrarSesion;
+    private ImageView btnCerrarSesion,btnCrearTransa, btnConfiguration;
     private MainListener mMainListener;
 
     // TODO: Rename and change types of parameters
@@ -94,8 +93,9 @@ public class InitFragment extends Fragment {
 
 
     private void initB(){
-        btnCrearTransa = (Button)getView().findViewById(R.id.btnCrearTransa);
+        btnCrearTransa = (ImageView)getView().findViewById(R.id.btnCrearTransa);
         btnCerrarSesion = (ImageView)getView().findViewById(R.id.btnCerrarSesion);
+        btnConfiguration = (ImageView)getView().findViewById(R.id.btnConfiguration);
 
 
         /**boton crear transaccion*/
@@ -105,6 +105,10 @@ public class InitFragment extends Fragment {
         /**boton cerrar sesion*/
         cerrarSesion cerrarsesion = new cerrarSesion();
         btnCerrarSesion.setOnClickListener(cerrarsesion);
+
+        /**boton ir a configuracion*/
+        goConfiguration goconfiguration =  new goConfiguration();
+        btnConfiguration.setOnClickListener(goconfiguration);
     }
 
     private class crearTransa implements View.OnClickListener{
@@ -137,6 +141,13 @@ public class InitFragment extends Fragment {
             });
             AlertDialog alert = builder.create();
             alert.show();
+        }
+    }
+
+    private class goConfiguration implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            mListener.goToConfiguration();
         }
     }
 }

@@ -8,5 +8,6 @@ public interface MainListener {
 
     void goToInit();
 
+    void goToConfiguration();
 
 }

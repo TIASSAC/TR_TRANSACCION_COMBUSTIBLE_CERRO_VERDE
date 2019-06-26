@@ -1,7 +1,6 @@
 package com.example.generartransaccioncombustible.fragments;
 
 import android.app.Activity;
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +12,7 @@ import com.example.generartransaccioncombustible.MainActivity;
 import com.example.generartransaccioncombustible.R;
 import com.example.generartransaccioncombustible.listeners.MainListener;
 
-public class CreateTransactionFragment extends Fragment {
+public class CreateTransactionFragment extends Fragment{
 
     private MainListener mListener;
 
@@ -25,8 +24,6 @@ public class CreateTransactionFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-
 
     public CreateTransactionFragment() {
         // Required empty public constructor
