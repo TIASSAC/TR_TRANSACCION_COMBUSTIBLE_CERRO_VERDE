@@ -131,6 +131,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/txtViewCurrentDate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
@@ -147,6 +148,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/txtViewCurrentHour"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
@@ -284,6 +286,7 @@
                     android:background="@color/base">
 
                     <ImageView
+                        android:id="@+id/btnStartTurn"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="2"
@@ -291,6 +294,7 @@
                         android:src="@drawable/inicioturno" />
 
                     <TextView
+                        android:id="@+id/txtStartTurn"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
