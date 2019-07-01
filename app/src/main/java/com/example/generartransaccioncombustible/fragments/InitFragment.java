@@ -14,33 +14,49 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.generartransaccioncombustible.MainActivity;
 import com.example.generartransaccioncombustible.R;
 import com.example.generartransaccioncombustible.listeners.LoginListener;
 import com.example.generartransaccioncombustible.listeners.MainListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 
 public class InitFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private ImageView btnCerrarSesion,btnCrearTransa, btnConfiguration;
-    private MainListener mMainListener;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    /******************************************Declarar Variables**********************************/
+    private ImageView btnCerrarSesion,btnCrearTransa, btnConfiguration, btnStartTurn;
+    private String mParam1,mParam2;
     private MainListener mListener;
+    private TextView txtViewCurrentDate , txtViewCurrentHour, txtStartTurn;
+
+    /**Para obtener la fecha actual*/
+
+    private String currentDate;
+    private SimpleDateFormat formatCurrentDate;
+    private Date currentDated;
+
+    /**Para Obtener la Hora actual-Contador*/
+
+    /**Inicio turno - Fin Turno*/
+    private int flag;
+
+    /**********************************************************************************************/
+
 
     public InitFragment() {
         // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
+
     public static InitFragment newInstance(String param1, String param2) {
         InitFragment fragment = new InitFragment();
         Bundle args = new Bundle();
@@ -70,7 +86,7 @@ public class InitFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        initB();
+        init();
     }
 
     @Override
@@ -91,13 +107,22 @@ public class InitFragment extends Fragment {
     }
 
 
-
-    private void initB(){
+    /**Carga inicial*/
+    private void init(){
+        /**vinculamos los parametros con los ids-layout*/
         btnCrearTransa = (ImageView)getView().findViewById(R.id.btnCrearTransa);
         btnCerrarSesion = (ImageView)getView().findViewById(R.id.btnCerrarSesion);
         btnConfiguration = (ImageView)getView().findViewById(R.id.btnConfiguration);
+        btnStartTurn = (ImageView)getView().findViewById(R.id.btnStartTurn);
 
+        txtViewCurrentDate = (TextView)getView().findViewById(R.id.txtViewCurrentDate);
+        txtViewCurrentHour = (TextView)getView().findViewById(R.id.txtViewCurrentHour);
+        txtStartTurn = (TextView)getView().findViewById(R.id.txtStartTurn);
 
+        flag = 1;
+        fechaActual();
+
+        /**************************************EVENTO CLIC*****************************************/
         /**boton crear transaccion*/
         crearTransa creartransa = new crearTransa();
         btnCrearTransa.setOnClickListener(creartransa);
@@ -109,8 +134,15 @@ public class InitFragment extends Fragment {
         /**boton ir a configuracion*/
         goConfiguration goconfiguration =  new goConfiguration();
         btnConfiguration.setOnClickListener(goconfiguration);
+
+        /**boton para iniciar turno - fin turno*/
+        startTurn startturn =  new startTurn();
+        btnStartTurn.setOnClickListener(startturn);
+
+        /******************************************************************************************/
     }
 
+    /**************************************EVENTO CLIC*****************************************/
     private class crearTransa implements View.OnClickListener{
 
         @Override
@@ -150,4 +182,81 @@ public class InitFragment extends Fragment {
             mListener.goToConfiguration();
         }
     }
+
+    private class startTurn implements  View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            if(flag == 1){
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setCancelable(false);
+                builder.setTitle("INICIO DE TURNO");
+                builder.setMessage("¿Esta seguro de querer iniciar el turno?" + "Tener en cuenta que se generara un nuevo turno");
+                builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        txtStartTurn.setText(R.string.endTurn);
+                        flag = flag +1;
+                        btnStartTurn.setImageResource(R.drawable.finturno);
+                    }
+                });
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+
+            }else if(flag == 2){
+
+                AlertDialog.Builder builder =  new AlertDialog.Builder(getActivity());
+                builder.setCancelable(false);
+                builder.setTitle("FIN DE TURNO");
+                builder.setMessage("¿Esta seguro de querer finalizar el turno?" + "Tener en cuenta que se cerrara su sesion");
+                builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        flag = flag - 1;
+                        txtStartTurn.setText(R.string.initTurn);
+                        btnStartTurn.setImageResource(R.drawable.inicioturno);
+                        //dialog.cancel();
+                    }
+                });
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+
+
+            }
+
+        }
+    }
+    /**********************************************************************************************/
+
+
+    /******************************************METODOS*********************************************/
+    /**Metodo para obtener la fecha actual*/
+    private void fechaActual(){
+
+        formatCurrentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        currentDated = new Date();
+
+        currentDate = formatCurrentDate.format(currentDated);
+
+        txtViewCurrentDate.setText(currentDate);
+    }
+
+    /**Metodo para obtener la hora actual*/
+
+
+    /**********************************************************************************************/
 }

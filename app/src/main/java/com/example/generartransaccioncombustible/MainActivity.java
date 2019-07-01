@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements MainListener {
     @Override
     public void goToCreateTransaction() {
         NavigationFragment.addFragment(null, createTransactionFragment, "CreateTransactionFragment", this,
-                R.id.toolbar_main, false, CustomAnimation.IN_OUT);
+                R.id.toolbar_main, false, CustomAnimation.LEFT_RIGHT);
         flag = 3;
         setTitle(R.string.createTransaction);
     }
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements MainListener {
     public void goToInit() {
 
         NavigationFragment.addFragment(null, initFragment, "InitFragment", this,
-                R.id.toolbar_main, false, CustomAnimation.IN_OUT);
+                R.id.toolbar_main, false, CustomAnimation.LEFT_RIGHT);
         flag=2;
         setTitle(R.string.menuPrincipal);
     }
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements MainListener {
     @Override
     public void goToConfiguration(){
         NavigationFragment.addFragment(null, configurationFragment, "configurationFragment", this,
-                R.id.toolbar_main, false, CustomAnimation.IN_OUT);
+                R.id.toolbar_main, false, CustomAnimation.LEFT_RIGHT);
         flag=4;
         setTitle(R.string.configuration);
     }
