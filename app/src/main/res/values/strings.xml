@@ -44,7 +44,7 @@
 
     <!--String Cabecera de Datos-->
 
-    <string name="date">Fecha - Hora Actual</string>
+    <string name="date">Fecha - Hora Actual:</string>
     <string name="turn2">Turno:</string>
     <string name="turn3">Ultimo Turno Registrado:</string>
     <string name="initTurn">Inicio Turno</string>
@@ -54,6 +54,5 @@
     <!--String Vista Configuracion-->
 
     <string name="save">Guardar</string>
-
 
 </resources>
